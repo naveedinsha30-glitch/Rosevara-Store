@@ -56,11 +56,11 @@
    3) Create your own user in Supabase Authentication. Never put a service_role/secret key here.
 */
 // IMPORTANT: Paste your Supabase Project URL and anon/public key below before publishing.
-const PUBLIC_SUPABASE_URL = 'PASTE_YOUR_SUPABASE_PROJECT_URL_HERE';
-const PUBLIC_SUPABASE_ANON_KEY = 'PASTE_YOUR_SUPABASE_ANON_PUBLIC_KEY_HERE';
+const PUBLIC_SUPABASE_URL = 'https://tjsrexeecyrhxzmlqrhb.supabase.co';
+const PUBLIC_SUPABASE_ANON_KEY = 'sb_publishable_C2YQnFPkZ_EEmOC5eTmuhw_WLF4JFJ0';
 const STORE = {
  url: localStorage.getItem('rosevara_url') || (PUBLIC_SUPABASE_URL.startsWith('https://') ? PUBLIC_SUPABASE_URL : ''),
- key: localStorage.getItem('rosevara_key') || (PUBLIC_SUPABASE_ANON_KEY.startsWith('ey') ? PUBLIC_SUPABASE_ANON_KEY : ''),
+ key: localStorage.getItem('rosevara_key') || PUBLIC_SUPABASE_ANON_KEY,
  bucket:'product-images'
 };
 let sb=null, session=null, products=[], currentProduct=null, adminTab='products';
