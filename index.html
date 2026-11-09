@@ -185,5 +185,10 @@ function editProduct(id){let p=products.find(x=>x.id===id);if(p)showProductForm(
 async function deleteProduct(id){if(!confirm('Delete this product?'))return;let p=products.find(x=>x.id===id);const {error}=await sb.from('shop_products').delete().eq('id',id);if(error){toast(error.message);return}if(p){let paths=mediaArray(p).map(m=>m.path).filter(Boolean);if(paths.length)await sb.storage.from(STORE.bucket).remove(paths)}await loadProducts();showProductList();toast('Product deleted.')}
 document.addEventListener('DOMContentLoaded',()=>{initClient();if(new URLSearchParams(location.search).get('studio')==='1')openManager()});
 </script>
+  <a href="https://wa.me/923020548644?text=Assalamualaikum%2C%20I%20want%20to%20place%20an%20order."
+target="_blank"
+style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px 20px;border-radius:50px;text-decoration:none;font-weight:bold;z-index:9999;">
+💬 WhatsApp Order
+  </a>
 </body>
 </html>
